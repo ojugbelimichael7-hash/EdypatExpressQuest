@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Make Payment | Edypat Express Quest</title>
+    <style>
+        
+    </style>
+    <link
+        rel="stylesheet"
+        href="css/paymentstyle.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a class="logo">
+        Edypat<span>Express Quest</span>
+    </a>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="savings.html">Savings</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+
+<main class="payment-page">
+
+    <div class="payment-container">
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-heading">
+
+            <p class="eyebrow">
+                MAKE A PAYMENT
+            </p>
+
+            <h1>
+                Add to your savings
+            </h1>
+
+            <p>
+                Enter the amount you want to save.
+                Your saving days will be calculated automatically.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             PAYMENT FORM
+        ====================================================== -->
+
+        <section
+            class="payment-card"
+            id="paymentFormCard"
+        >
+
+            <!-- STEP 1 -->
+
+            <div class="payment-step">
+
+                <div class="step-heading">
+
+                    <span class="step-number">1</span>
+
+                    <div>
+                        <h2>Enter payment amount</h2>
+
+                        <p>
+                            Your daily saving amount is
+                            <strong id="dailyRate">₦1,000.00</strong>
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="paymentAmount">
+                        Amount you want to save
+                    </label>
+
+                    <div class="amount-input">
+
+                        <span>₦</span>
+
+                        <input
+                            type="number"
+                            id="paymentAmount"
+                            name="paymentAmount"
+                            placeholder="Enter amount"
+                            min="1000"
+                            step="1000"
+                            inputmode="numeric"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- DAYS CALCULATION -->
+
+                <div
+                    class="days-calculation"
+                    id="daysCalculation"
+                    style="display:none;"
+                >
+
+                    <div>
+
+                        <span>
+                            Saving days covered
+                        </span>
+
+                        <strong id="daysCovered">
+                            0 saving days
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WARNING -->
+
+                <div
+                    class="payment-warning"
+                    id="paymentWarning"
+                ></div>
+
+
+                <!-- TOTAL -->
+
+                <div
+                    class="total-to-pay"
+                    id="totalToPay"
+                    style="display:none;"
+                ></div>
+
+            </div>
+
+
+            <!-- =================================================
+                 STEP 2 — PAYMENT METHOD
+            ================================================== -->
+
+            <div
+                class="payment-step payment-method-step"
+                id="paymentMethodStep"
+                style="display:none;"
+            >
+
+                <div class="step-heading">
+
+                    <span class="step-number">2</span>
+
+                    <div>
+
+                        <h2>
+                            Choose payment method
+                        </h2>
+
+                        <p>
+                            Select how you want to make your payment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="payment-methods">
+
+                    <label class="payment-method-option">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Bank Transfer"
+                        >
+
+                        <div class="payment-method-content">
+
+                            <div class="payment-method-icon">
+                                🏦
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Bank Transfer
+                                </strong>
+
+                                <span>
+                                    Transfer directly to our bank account
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <span class="method-check">
+                            ✓
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div
+                class="payment-error"
+                id="paymentError"
+            ></div>
+
+
+          
+        <!-- =====================================================
+             STEP 3 — REVIEW
+        ====================================================== -->
+
+        <section
+            class="payment-card"
+            id="reviewStep"
+            style="display:none;"
+        >
+
+            <div class="step-heading">
+
+                <span class="step-number">3</span>
+
+                <div>
+
+                    <h2>
+                        Review your payment
+                    </h2>
+
+                    <p>
+                        Confirm the details before making your transfer.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="payment-summary">
+
+                <div class="summary-row">
+
+                    <span>
+                        Savings amount
+                    </span>
+
+                    <strong id="summaryAmount">
+                        ₦0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Daily saving
+                    </span>
+
+                    <strong id="summaryDailyAmount">
+                        ₦1,000.00
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Saving days
+                    </span>
+
+                    <strong id="summaryDays">
+                        0 days
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Service charge
+                    </span>
+
+                    <strong id="summaryCharge">
+                        ₦50.00
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Payment method
+                    </span>
+
+                    <strong id="summaryMethod">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total to pay
+                    </span>
+
+                    <strong id="summaryTotal">
+                        ₦0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+          <!-- MAIN BUTTON -->
+
+            <button
+                type="button"
+                class="primary-btn payment-btn"
+                id="continuePaymentBtn"
+            >
+                Continue
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- =====================================================
+             PAYMENT SUCCESS / BANK TRANSFER
+        ====================================================== -->
+
+        <section
+            class="payment-card payment-success"
+            id="paymentSuccess"
+        >
+
+            <div class="pending-icon">
+                ₦
+            </div>
+
+            <p class="eyebrow">
+                BANK TRANSFER
+            </p>
+
+            <h2>
+                Make your transfer
+            </h2>
+
+            <p>
+                Transfer the exact amount below to the Edypat Express Quest
+                account, then send your receipt through WhatsApp.
+            </p>
+
+
+            <!-- BANK DETAILS -->
+
+            <div class="bank-details">
+
+                <div class="bank-detail">
+
+                    <span>
+                        Bank
+                    </span>
+
+                    <strong>
+                        MONIEPOINT
+                    </strong>
+
+                </div>
+
+
+                <div class="bank-detail">
+
+                    <span>
+                        Account Name
+                    </span>
+
+                    <strong>
+                        Edypat Express Quest
+                    </strong>
+
+                </div>
+
+
+                <div class="bank-detail">
+
+                    <span>
+                        Account Number
+                    </span>
+
+                    <strong>
+                       8294725224
+                    </strong>
+
+                </div>
+
+
+                <div class="bank-detail amount-detail">
+
+                    <span>
+                        Amount to Transfer
+                    </span>
+
+                    <strong id="successAmount">
+                        ₦0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT SUMMARY -->
+
+            <div class="payment-success-details">
+
+                <div class="success-detail">
+
+                    <span>
+                        Saving days covered
+                    </span>
+
+                    <strong id="successDays">
+                        0 days
+                    </strong>
+
+                </div>
+
+
+                <div class="success-detail">
+
+                    <span>
+                        Payment method
+                    </span>
+
+                    <strong id="successMethod">
+                        Bank Transfer
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECEIPT -->
+
+            <div class="receipt-box">
+
+                <h3>
+                    Send your receipt
+                </h3>
+
+                <p>
+                    After completing the bank transfer, send your
+                    payment receipt and full name to Ojugbeli Onyemaechi Edwin on WhatsApp.
+                </p>
+
+
+                <div class="receipt-actions">
+
+                    <button
+                        type="button"
+                        class="whatsapp-receipt-btn"
+                        id="whatsappReceiptBtn"
+                    >
+                        Send Receipt on WhatsApp
+                        <span>↗</span>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="confirm-receipt-btn"
+                        id="confirmReceiptBtn"
+                        disabled
+                    >
+                        I Have Sent My Receipt
+                        <span>✓</span>
+                    </button>
+
+                </div>
+
+
+                <p
+                    class="receipt-status"
+                    id="receiptStatus"
+                ></p>
+
+            </div>
+
+
+            <!-- NOTE -->
+
+            <div class="payment-note">
+
+                <strong>
+                    Important
+                </strong>
+
+                <p>
+                    Your savings balance will not be updated until
+                    your payment has been verified.
+                </p>
+
+            </div>
+
+
+            <!-- MAKE ANOTHER PAYMENT -->
+
+            <button
+                type="button"
+                class="secondary-btn new-payment-btn"
+                id="newPaymentBtn"
+            >
+                Make Another Payment
+            </button>
+
+        </section>
+
+
+        <!-- =====================================================
+             PENDING VERIFICATION
+        ====================================================== -->
+
+        <section
+            class="payment-card pending-section"
+            id="paymentPending"
+            style="display:none;"
+        >
+
+            <div class="pending-icon">
+                ✓
+            </div>
+
+            <p class="eyebrow">
+                PAYMENT RECEIVED
+            </p>
+
+            <h2>
+                Waiting for confirmation
+            </h2>
+
+            <p>
+                Your payment receipt has been submitted.
+                Our team will verify your payment before your
+                savings balance and saving days are updated.
+            </p>
+
+
+            <div class="pending-info">
+
+                <div>
+                    <span>
+                        Amount paid
+                    </span>
+
+                    <strong id="pendingAmount">
+                        ₦0.00
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>
+                        Saving days
+                    </span>
+
+                    <strong id="pendingDays">
+                        0 days
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="primary-btn"
+            >
+                Back to Dashboard
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+<script>
+/* =========================================================
+   Edypat Express Quest - MAIN JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach((question) => {
+
+    question.addEventListener("click", () => {
+
+        const currentItem = question.parentElement;
+
+        currentItem.classList.toggle("active");
+
+    });
+
+});
+
+
+/* =========================================================
+   PAYMENT PAGE
+========================================================= */
+
+/*
+   FRONTEND DEMO VALUE.
+
+   Later this will come from the customer's
+   authenticated account/database.
+*/
+
+const customerDailyAmount = 1000;
+
+
+/*
+   Service charge.
+
+   This is separate from the customer's savings.
+*/
+
+const serviceCharge = 50;
+
+
+/*
+   Replace this with the real Edypat Express Quest
+   WhatsApp number.
+
+   Nigerian format:
+   234XXXXXXXXXX
+
+   Do NOT put + or spaces.
+*/
+
+const EdypatExpressQuest = "2348032352362";
+
+
+/* =========================================================
+   PAYMENT ELEMENTS
+========================================================= */
+
+const paymentAmount =
+    document.getElementById("paymentAmount");
+
+const daysCovered =
+    document.getElementById("daysCovered");
+
+const daysCalculation =
+    document.getElementById("daysCalculation");
+
+const totalToPay =
+    document.getElementById("totalToPay");
+
+const paymentWarning =
+    document.getElementById("paymentWarning");
+
+const continuePaymentBtn =
+    document.getElementById("continuePaymentBtn");
+
+const paymentError =
+    document.getElementById("paymentError");
+
+const paymentMethodStep =
+    document.getElementById("paymentMethodStep");
+
+const reviewStep =
+    document.getElementById("reviewStep");
+
+const paymentFormCard =
+    document.getElementById("paymentFormCard");
+
+const paymentSuccess =
+    document.getElementById("paymentSuccess");
+
+const newPaymentBtn =
+    document.getElementById("newPaymentBtn");
+
+
+/* Receipt */
+
+const whatsappReceiptBtn =
+    document.getElementById("whatsappReceiptBtn");
+
+const confirmReceiptBtn =
+    document.getElementById("confirmReceiptBtn");
+
+const receiptStatus =
+    document.getElementById("receiptStatus");
+
+
+/* Pending */
+
+const paymentPending =
+    document.getElementById("paymentPending");
+
+const pendingAmount =
+    document.getElementById("pendingAmount");
+
+const pendingDays =
+    document.getElementById("pendingDays");
+
+
+/* =========================================================
+   FORMAT NAIRA
+========================================================= */
+
+function formatPaymentNaira(amount) {
+
+    return new Intl.NumberFormat("en-NG", {
+
+        style: "currency",
+
+        currency: "NGN",
+
+        minimumFractionDigits: 2,
+
+        maximumFractionDigits: 2
+
+    }).format(amount);
+
+}
+
+
+/* =========================================================
+   DAILY AMOUNT DISPLAY
+========================================================= */
+
+const dailyRate =
+    document.getElementById("dailyRate");
+
+const summaryDailyAmount =
+    document.getElementById("summaryDailyAmount");
+
+
+if (dailyRate) {
+
+    dailyRate.textContent =
+        formatPaymentNaira(customerDailyAmount);
+
+}
+
+
+if (summaryDailyAmount) {
+
+    summaryDailyAmount.textContent =
+        formatPaymentNaira(customerDailyAmount);
+
+}
+
+
+/* =========================================================
+   CALCULATE SAVING DAYS
+========================================================= */
+
+function calculateSavingDays(amount) {
+
+    if (!amount || amount <= 0) {
+
+        return 0;
+
+    }
+
+
+    const exactDays =
+        amount / customerDailyAmount;
+
+
+    /*
+       Only complete saving days are accepted.
+    */
+
+    if (exactDays % 1 !== 0) {
+
+        return -1;
+
+    }
+
+
+    return exactDays;
+
+}
+
+
+/* =========================================================
+   CALCULATE SAVINGS
+========================================================= */
+
+function calculateSavingsAmount(amount) {
+
+    const days =
+        calculateSavingDays(amount);
+
+
+    if (days === -1) {
+
+        return 0;
+
+    }
+
+
+    return days * customerDailyAmount;
+
+}
+
+
+/* =========================================================
+   CALCULATE TOTAL PAYMENT
+========================================================= */
+
+function calculateTotalPayment(amount) {
+
+    const savingsAmount =
+        calculateSavingsAmount(amount);
+
+
+    return savingsAmount + serviceCharge;
+
+}
+
+
+/* =========================================================
+   LIVE PAYMENT CALCULATION
+========================================================= */
+
+if (paymentAmount) {
+
+    paymentAmount.addEventListener("input", () => {
+
+        const amount =
+            Number(paymentAmount.value);
+
+
+        /* Empty */
+
+        if (!amount || amount <= 0) {
+
+            if (daysCovered) {
+
+                daysCovered.textContent =
+                    "0 saving days";
+
+            }
+
+
+            if (daysCalculation) {
+
+                daysCalculation.style.display =
+                    "none";
+
+            }
+
+
+            if (totalToPay) {
+
+                totalToPay.style.display =
+                    "none";
+
+            }
+
+
+            if (paymentWarning) {
+
+                paymentWarning.classList.remove("show");
+
+            }
+
+
+            return;
+
+        }
+
+
+        /* Calculate */
+
+        const calculatedDays =
+            calculateSavingDays(amount);
+
+
+        /* Invalid amount */
+
+        if (calculatedDays === -1) {
+
+            if (daysCovered) {
+
+                daysCovered.textContent =
+                    "Invalid amount";
+
+            }
+
+
+            if (daysCalculation) {
+
+                daysCalculation.style.display =
+                    "none";
+
+            }
+
+
+            if (totalToPay) {
+
+                totalToPay.style.display =
+                    "none";
+
+            }
+
+
+            if (paymentWarning) {
+
+                paymentWarning.innerHTML =
+                    `Amount must be in multiples of
+                    ${formatPaymentNaira(customerDailyAmount)}.
+                    Example:
+                    ${formatPaymentNaira(customerDailyAmount)},
+                    ${formatPaymentNaira(customerDailyAmount * 2)},
+                    ${formatPaymentNaira(customerDailyAmount * 3)}.`;
+
+                paymentWarning.classList.add("show");
+
+            }
+
+
+            return;
+
+        }
+
+
+        /* Valid */
+
+        if (paymentWarning) {
+
+            paymentWarning.classList.remove("show");
+
+        }
+
+
+        if (daysCalculation) {
+
+            daysCalculation.style.display =
+                "flex";
+
+        }
+
+
+        if (daysCovered) {
+
+            daysCovered.textContent =
+                `${calculatedDays} saving ${
+                    calculatedDays === 1
+                        ? "day"
+                        : "days"
+                }`;
+
+        }
+
+
+        if (totalToPay) {
+
+            const totalPayment =
+                calculateTotalPayment(amount);
+
+
+            totalToPay.innerHTML =
+                `Total to Pay:
+                <strong>
+                    ${formatPaymentNaira(totalPayment)}
+                </strong>`;
+
+
+            totalToPay.style.display =
+                "block";
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   PAYMENT STEP
+========================================================= */
+
+let currentPaymentStep = 1;
+
+
+/* =========================================================
+   INITIAL STATE
+========================================================= */
+
+if (paymentMethodStep) {
+
+    paymentMethodStep.style.display =
+        "none";
+
+}
+
+
+if (reviewStep) {
+
+    reviewStep.style.display =
+        "none";
+
+}
+
+
+if (paymentSuccess) {
+
+    paymentSuccess.style.display =
+        "none";
+
+}
+
+
+if (paymentPending) {
+
+    paymentPending.style.display =
+        "none";
+
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+========================================================= */
+
+if (continuePaymentBtn) {
+
+    continuePaymentBtn.addEventListener(
+        "click",
+        () => {
+
+
+            /* Remove old error */
+
+            if (paymentError) {
+
+                paymentError.classList.remove("show");
+
+            }
+
+
+            /* =============================================
+               STEP 1
+            ============================================= */
+
+            if (currentPaymentStep === 1) {
+
+                const amount =
+                    Number(paymentAmount.value);
+
+
+                if (!amount || amount <= 0) {
+
+                    showPaymentError(
+                        "Please enter the amount you want to save."
+                    );
+
+                    return;
+
+                }
+
+
+                const calculatedDays =
+                    calculateSavingDays(amount);
+
+
+                if (calculatedDays === -1) {
+
+                    showPaymentError(
+                        `Amount must be in multiples of
+                        ${formatPaymentNaira(customerDailyAmount)}.`
+                    );
+
+                    return;
+
+                }
+
+
+                if (calculatedDays < 1) {
+
+                    showPaymentError(
+                        "Please enter an amount that covers at least one saving day."
+                    );
+
+                    return;
+
+                }
+
+
+                /* Show payment method */
+
+                if (paymentMethodStep) {
+
+                    paymentMethodStep.style.display =
+                        "block";
+
+                }
+
+
+                currentPaymentStep = 2;
+
+
+                continuePaymentBtn.innerHTML =
+                    `Continue <span>→</span>`;
+
+
+                if (paymentMethodStep) {
+
+                    paymentMethodStep.scrollIntoView({
+
+                        behavior: "smooth",
+
+                        block: "start"
+
+                    });
+
+                }
+
+
+                return;
+
+            }
+
+
+            /* =============================================
+               STEP 2
+            ============================================= */
+
+            if (currentPaymentStep === 2) {
+
+                const selectedMethod =
+                    document.querySelector(
+                        'input[name="paymentMethod"]:checked'
+                    );
+
+
+                if (!selectedMethod) {
+
+                    showPaymentError(
+                        "Please select a payment method."
+                    );
+
+                    return;
+
+                }
+
+
+                updatePaymentSummary();
+
+
+                if (reviewStep) {
+
+                    reviewStep.style.display =
+                        "block";
+
+                }
+
+
+                currentPaymentStep = 3;
+
+
+                continuePaymentBtn.innerHTML =
+                    `Confirm Payment <span>→</span>`;
+
+
+                if (reviewStep) {
+
+                    reviewStep.scrollIntoView({
+
+                        behavior: "smooth",
+
+                        block: "start"
+
+                    });
+
+                }
+
+
+                return;
+
+            }
+
+
+            /* =============================================
+               STEP 3
+            ============================================= */
+
+            if (currentPaymentStep === 3) {
+
+                submitPayment();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SHOW PAYMENT ERROR
+========================================================= */
+
+function showPaymentError(message) {
+
+    if (!paymentError) {
+
+        return;
+
+    }
+
+
+    paymentError.textContent =
+        message;
+
+
+    paymentError.classList.add("show");
+
+
+    paymentError.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "center"
+
+    });
+
+}
+
+
+/* =========================================================
+   UPDATE PAYMENT SUMMARY
+========================================================= */
+
+function updatePaymentSummary() {
+
+    if (!paymentAmount) {
+
+        return;
+
+    }
+
+
+    const amount =
+        Number(paymentAmount.value);
+
+
+    const calculatedDays =
+        calculateSavingDays(amount);
+
+
+    const savingsAmount =
+        calculateSavingsAmount(amount);
+
+
+    const totalPayment =
+        calculateTotalPayment(amount);
+
+
+    const selectedMethod =
+        document.querySelector(
+            'input[name="paymentMethod"]:checked'
+        );
+
+
+    const summaryAmount =
+        document.getElementById("summaryAmount");
+
+    const summaryDays =
+        document.getElementById("summaryDays");
+
+    const summaryCharge =
+        document.getElementById("summaryCharge");
+
+    const summaryMethod =
+        document.getElementById("summaryMethod");
+
+    const summaryTotal =
+        document.getElementById("summaryTotal");
+
+
+    if (summaryAmount) {
+
+        summaryAmount.textContent =
+            formatPaymentNaira(savingsAmount);
+
+    }
+
+
+    if (summaryDays) {
+
+        summaryDays.textContent =
+            `${calculatedDays} ${
+                calculatedDays === 1
+                    ? "day"
+                    : "days"
+            }`;
+
+    }
+
+
+    if (summaryCharge) {
+
+        summaryCharge.textContent =
+            formatPaymentNaira(serviceCharge);
+
+    }
+
+
+    if (summaryMethod && selectedMethod) {
+
+        summaryMethod.textContent =
+            selectedMethod.value;
+
+    }
+
+
+    if (summaryTotal) {
+
+        summaryTotal.textContent =
+            formatPaymentNaira(totalPayment);
+
+    }
+
+}
+
+
+/* =========================================================
+   SHOW BANK TRANSFER DETAILS
+========================================================= */
+
+function submitPayment() {
+
+    if (!paymentAmount) {
+
+        return;
+
+    }
+
+
+    const amount =
+        Number(paymentAmount.value);
+
+
+    const calculatedDays =
+        calculateSavingDays(amount);
+
+
+    const savingsAmount =
+        calculateSavingsAmount(amount);
+
+
+    const totalPayment =
+        calculateTotalPayment(amount);
+
+
+    const selectedMethod =
+        document.querySelector(
+            'input[name="paymentMethod"]:checked'
+        );
+
+
+    const successAmount =
+        document.getElementById("successAmount");
+
+    const successDays =
+        document.getElementById("successDays");
+
+    const successMethod =
+        document.getElementById("successMethod");
+
+
+    /*
+       The customer pays:
+
+       Savings amount + ₦50 service charge.
+    */
+
+    if (successAmount) {
+
+        successAmount.textContent =
+            formatPaymentNaira(totalPayment);
+
+    }
+
+
+    if (successDays) {
+
+        successDays.textContent =
+            `${calculatedDays} ${
+                calculatedDays === 1
+                    ? "day"
+                    : "days"
+            }`;
+
+    }
+
+
+    if (successMethod && selectedMethod) {
+
+        successMethod.textContent =
+            selectedMethod.value;
+
+    }
+
+
+    /* Hide main payment form */
+
+    if (paymentFormCard) {
+
+        paymentFormCard.style.display =
+            "none";
+
+    }
+
+
+    /* Hide review */
+
+    if (reviewStep) {
+
+        reviewStep.style.display =
+            "none";
+
+    }
+
+
+    /* Show bank instructions */
+
+    if (paymentSuccess) {
+
+        paymentSuccess.style.display =
+            "block";
+
+
+        paymentSuccess.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   SEND RECEIPT THROUGH WHATSAPP
+========================================================= */
+
+if (whatsappReceiptBtn) {
+
+    whatsappReceiptBtn.addEventListener(
+        "click",
+        () => {
+
+
+            const amount =
+                Number(paymentAmount.value);
+
+
+            const calculatedDays =
+                calculateSavingDays(amount);
+
+
+            const totalPayment =
+                calculateTotalPayment(amount);
+
+
+            const message =
+`Hello Edypat Express Quest,
+
+I have made a savings payment.
+
+Savings amount: ${formatPaymentNaira(amount)}
+Saving days covered: ${calculatedDays}
+Service charge: ${formatPaymentNaira(serviceCharge)}
+Total transferred: ${formatPaymentNaira(totalPayment)}
+Payment method: Bank Transfer
+
+I am sending my payment receipt for verification.`;
+
+
+            const whatsappURL =
+                `https://wa.me/${2348032352362}?text=${
+                    encodeURIComponent(message)
+                }`;
+
+
+            window.location.href=whatsappURL;
+            
+
+            /*
+               Enable confirmation button.
+            */
+
+            if (confirmReceiptBtn) {
+
+                confirmReceiptBtn.disabled =
+                    false;
+
+            }
+
+
+            if (receiptStatus) {
+
+                receiptStatus.textContent =
+                    "WhatsApp opened. Send your receipt, then return here and confirm.";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CONFIRM RECEIPT
+========================================================= */
+
+if (confirmReceiptBtn) {
+
+    confirmReceiptBtn.addEventListener(
+        "click",
+        () => {
+
+
+            const amount =
+                Number(paymentAmount.value);
+
+
+            const calculatedDays =
+                calculateSavingDays(amount);
+
+
+            const totalPayment =
+                calculateTotalPayment(amount);
+
+
+            /*
+               IMPORTANT:
+
+               This does NOT update the savings balance.
+
+               It only shows "Pending Verification".
+
+               The backend/database will eventually
+               create the actual payment record.
+            */
+
+
+            if (pendingAmount) {
+
+                pendingAmount.textContent =
+                    formatPaymentNaira(totalPayment);
+
+            }
+
+
+            if (pendingDays) {
+
+                pendingDays.textContent =
+                    `${calculatedDays} ${
+                        calculatedDays === 1
+                            ? "day"
+                            : "days"
+                    }`;
+
+            }
+
+
+            if (paymentSuccess) {
+
+                paymentSuccess.style.display =
+                    "none";
+
+            }
+
+
+            if (paymentPending) {
+
+                paymentPending.style.display =
+                    "block";
+
+
+                paymentPending.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MAKE ANOTHER PAYMENT
+========================================================= */
+
+if (newPaymentBtn) {
+
+    newPaymentBtn.addEventListener(
+        "click",
+        () => {
+
+
+            /* Reset amount */
+
+            if (paymentAmount) {
+
+                paymentAmount.value =
+                    "";
+
+            }
+
+
+            /* Reset days */
+
+            if (daysCovered) {
+
+                daysCovered.textContent =
+                    "0 saving days";
+
+            }
+
+
+            /* Hide calculations */
+
+            if (daysCalculation) {
+
+                daysCalculation.style.display =
+                    "none";
+
+            }
+
+
+            if (totalToPay) {
+
+                totalToPay.style.display =
+                    "none";
+
+            }
+
+
+            /* Remove warning */
+
+            if (paymentWarning) {
+
+                paymentWarning.classList.remove(
+                    "show"
+                );
+
+            }
+
+
+            /* Remove error */
+
+            if (paymentError) {
+
+                paymentError.classList.remove(
+                    "show"
+                );
+
+            }
+
+
+            /* Reset payment method */
+
+            const selectedMethod =
+                document.querySelector(
+                    'input[name="paymentMethod"]:checked'
+                );
+
+
+            if (selectedMethod) {
+
+                selectedMethod.checked =
+                    false;
+
+            }
+
+
+            /* Hide steps */
+
+            if (paymentMethodStep) {
+
+                paymentMethodStep.style.display =
+                    "none";
+
+            }
+
+
+            if (reviewStep) {
+
+                reviewStep.style.display =
+                    "none";
+
+            }
+
+
+            if (paymentSuccess) {
+
+                paymentSuccess.style.display =
+                    "none";
+
+            }
+
+
+            if (paymentPending) {
+
+                paymentPending.style.display =
+                    "none";
+
+            }
+
+
+            /* Show form */
+
+            if (paymentFormCard) {
+
+                paymentFormCard.style.display =
+                    "block";
+
+            }
+
+
+            /* Reset step */
+
+            currentPaymentStep =
+                1;
+
+
+            /* Reset button */
+
+            if (continuePaymentBtn) {
+
+                continuePaymentBtn.innerHTML =
+                    `Continue <span>→</span>`;
+
+            }
+
+
+            /* Reset receipt button */
+
+            if (confirmReceiptBtn) {
+
+                confirmReceiptBtn.disabled =
+                    true;
+
+            }
+
+
+            if (receiptStatus) {
+
+                receiptStatus.textContent =
+                    "";
+
+            }
+
+
+            /* Scroll top */
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+}
+
+
+
+</script>
+
+</body>
+
+</html>

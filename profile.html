@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Profile -  Edypat Express Quest</title>
+
+    <!-- Main website CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Profile & Notification CSS -->
+    <link rel="stylesheet" href="css/profile-notifications.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        Thrift<span>Save</span>
+    </a>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+         <a
+            href="notifications.html"
+            class="active nav-notification-link"
+        >
+            Notifications
+
+            <span
+                class="nav-notification-badge"
+                id="navNotificationBadge"
+            >
+                
+            </span>
+
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     PROFILE PAGE
+========================================================= -->
+
+<main class="account-page">
+
+    <div class="account-container">
+
+        <!-- PAGE HEADER -->
+
+        <section class="account-heading">
+
+            <p class="eyebrow">MY PROFILE</p>
+
+            <h1>Customer Information</h1>
+
+            <p>
+                View and manage your personal information
+                registered with  Edypat Express Quest.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             PROFILE CARD
+        ================================================== -->
+
+        <section class="profile-card">
+
+            <!-- PROFILE HEADER -->
+
+            <div class="profile-header">
+
+                <div class="profile-avatar" id="profileAvatar">
+                    M
+                </div>
+
+                <div class="profile-header-info">
+
+                    <h2 id="profileName">
+                        Michael
+                    </h2>
+
+                    <p>
+                         Edypat Express Quest Customer
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PERSONAL INFORMATION
+            ================================================== -->
+
+            <div class="profile-section">
+
+                <div class="profile-section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            PERSONAL INFORMATION
+                        </span>
+
+                        <h3>Your Details</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details-grid">
+
+                    <!-- FULL NAME -->
+
+                    <div class="profile-detail">
+
+                        <span class="detail-label">
+                            Full Name
+                        </span>
+
+                        <strong id="fullName">
+                            Michael Ojugbeli
+                        </strong>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="profile-detail">
+
+                        <span class="detail-label">
+                            Phone Number
+                        </span>
+
+                        <strong id="phoneNumber">
+                            +234 800 000 0000
+                        </strong>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="profile-detail">
+
+                        <span class="detail-label">
+                            Email Address
+                        </span>
+
+                        <strong id="emailAddress">
+                            customer@example.com
+                        </strong>
+
+                    </div>
+
+
+                    <!-- DATE OF BIRTH -->
+
+                    <div class="profile-detail">
+
+                        <span class="detail-label">
+                            Date of Birth
+                        </span>
+
+                        <strong id="dateOfBirth">
+                            01 January 2000
+                        </strong>
+
+                    </div>
+
+
+                    <!-- GENDER -->
+
+                    <div class="profile-detail">
+
+                        <span class="detail-label">
+                            Gender
+                        </span>
+
+                        <strong id="gender">
+                            Male
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="profile-detail profile-detail-full">
+
+                        <span class="detail-label">
+                            Residential Address
+                        </span>
+
+                        <strong id="address">
+                            Customer residential address
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ACCOUNT INFORMATION
+            ================================================== -->
+
+            <div class="profile-section">
+
+                <div class="profile-section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            ACCOUNT INFORMATION
+                        </span>
+
+                        <h3>Registration Details</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-details-grid">
+
+                    <!-- CUSTOMER ID -->
+
+                    <div class="profile-detail">
+
+                        <span class="detail-label">
+                            Customer ID
+                        </span>
+
+                        <strong id="customerId">
+                            TS-000001
+                        </strong>
+
+                    </div>
+
+
+                    <!-- REGISTRATION DATE -->
+
+                    <div class="profile-detail">
+
+                        <span class="detail-label">
+                            Registration Date
+                        </span>
+
+                        <strong id="registrationDate">
+                            01 September 2026
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ACCOUNT STATUS -->
+
+                    <div class="profile-detail">
+
+                        <span class="detail-label">
+                            Account Status
+                        </span>
+
+                        <strong class="account-status">
+                            <span class="status-dot"></span>
+                            Active
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 NOTICE
+            ================================================== -->
+
+            <div class="profile-notice">
+
+                <div class="profile-notice-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <strong>Your information</strong>
+
+                    <p>
+                        Please contact  Edypat Express Quest if any of your
+                        personal information needs to be corrected
+                        or updated.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTACT BUTTON
+            ================================================== -->
+
+            <div class="profile-actions">
+
+                <a
+                    href="contact.html"
+                    class="primary-btn profile-contact-btn"
+                >
+                    Contact  Edypat Express Quest
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TERMS & CONDITIONS
+        ================================================== -->
+
+        <section class="terms-card">
+
+            <div class="terms-heading">
+
+                <div class="terms-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <p class="eyebrow">
+                         Edypat Express Quest POLICY
+                    </p>
+
+                    <h2>
+                        Terms & Conditions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="terms-list">
+
+                <div class="term-item">
+
+                    <span class="term-number">1</span>
+
+                    <div>
+                        <strong>Customer account</strong>
+
+                        <p>
+                            Your  Edypat Express Quest account is personal to you.
+                            You are responsible for ensuring that the
+                            information provided during registration is
+                            accurate and up to date.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="term-item">
+
+                    <span class="term-number">2</span>
+
+                    <div>
+                        <strong>Account information</strong>
+
+                        <p>
+                            Customers should review their personal
+                            information and notify  Edypat Express Quest of any
+                            errors or changes that need to be made.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="term-item">
+
+                    <span class="term-number">3</span>
+
+                    <div>
+                        <strong>Payments</strong>
+
+                        <p>
+                            Payments made through the website are subject
+                            to verification. A payment is not added to
+                            your savings record until it has been verified
+                            by  Edypat Express Quest.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="term-item">
+
+                    <span class="term-number">4</span>
+
+                    <div>
+                        <strong>Payment receipts</strong>
+
+                        <p>
+                            Customers must provide valid payment evidence
+                            when requested. False or altered payment
+                            information may result in the transaction
+                            being rejected.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="term-item">
+
+                    <span class="term-number">5</span>
+
+                    <div>
+                        <strong>Withdrawals</strong>
+
+                        <p>
+                            Withdrawal requests are subject to  Edypat Express Quest
+                            verification and the applicable withdrawal
+                            rules. Customers may be required to provide
+                            notice before a withdrawal is processed.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="term-item">
+
+                    <span class="term-number">6</span>
+
+                    <div>
+                        <strong>Website records</strong>
+
+                        <p>
+                            Digital records displayed in your account are
+                            provided for your convenience. Customers should
+                            report any discrepancy to  Edypat Express Quest as soon
+                            as possible.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="term-item">
+
+                    <span class="term-number">7</span>
+
+                    <div>
+                        <strong>Privacy</strong>
+
+                        <p>
+                            Your personal and financial information is
+                            intended for your account and authorized
+                             Edypat Express Quest personnel only. Customer information
+                            must not be publicly displayed.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="term-item">
+
+                    <span class="term-number">8</span>
+
+                    <div>
+                        <strong>Changes to the service</strong>
+
+                        <p>
+                             Edypat Express Quest may update its website, procedures,
+                            policies or terms when necessary. Customers
+                            will be notified where appropriate.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="terms-footer">
+
+                <strong>
+                    Need clarification?
+                </strong>
+
+                <p>
+                    Contact  Edypat Express Quest before carrying out a transaction
+                    if you are unsure about any of these terms.
+                </p>
+
+                <a href="contact.html">
+                    Contact Us →
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<script src="js/profile-notifications.js"></script>
+
+</body>
+</html>

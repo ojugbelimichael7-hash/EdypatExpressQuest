@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Notifications -  Edypat Express Quest</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/profile-notifications.css"
+    >
+
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        Edypat<span>Express Quest</span>
+    </a>
+
+
+    <nav>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     NOTIFICATIONS PAGE
+========================================================= -->
+
+<main class="account-page">
+
+    <div class="account-container">
+
+
+        <!-- =================================================
+             PAGE HEADING
+        ================================================== -->
+
+        <section class="account-heading">
+
+            <p class="eyebrow">
+                NOTIFICATIONS
+            </p>
+
+            <h1>
+                Stay up to date
+            </h1>
+
+            <p>
+                Important updates about your payments,
+                savings and account will appear here.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             NOTIFICATION CONTROLS
+        ================================================== -->
+
+        <section class="notification-controls">
+
+            <div>
+
+                <span class="notification-count">
+                    <strong id="notificationCount">
+                        3
+                    </strong>
+                    notifications
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="mark-all-btn"
+                id="markAllReadBtn"
+            >
+                Mark all as read
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             NOTIFICATION LIST
+        ================================================== -->
+
+        <section
+            class="notification-list"
+            id="notificationList"
+        >
+
+
+            <!-- =============================================
+                 NOTIFICATION 1
+            ============================================== -->
+
+            <article
+                class="notification-item unread"
+                data-notification-id="1"
+            >
+
+                <div class="notification-icon payment-icon">
+                    ₦
+                </div>
+
+
+                <div class="notification-content">
+
+                    <div class="notification-top">
+
+                        <h3>
+                            Receipt submitted
+                        </h3>
+
+                        <span class="notification-time">
+                            Just now
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Your payment receipt has been submitted
+                        successfully and is awaiting confirmation
+                        from  Edypat Express Quest.
+                    </p>
+
+
+                    <span class="notification-status pending-status">
+                        Awaiting confirmation
+                    </span>
+
+                </div>
+
+
+                <span class="unread-dot"></span>
+
+            </article>
+
+
+            <!-- =============================================
+                 NOTIFICATION 2
+            ============================================== -->
+
+            <article
+                class="notification-item unread"
+                data-notification-id="2"
+            >
+
+                <div class="notification-icon success-icon">
+                    ✓
+                </div>
+
+
+                <div class="notification-content">
+
+                    <div class="notification-top">
+
+                        <h3>
+                            Savings balance updated
+                        </h3>
+
+                        <span class="notification-time">
+                            Yesterday
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Your recent payment has been verified.
+                        Your savings record has been updated
+                        successfully.
+                    </p>
+
+
+                    <span class="notification-status verified-status">
+                        Payment verified
+                    </span>
+
+                </div>
+
+
+                <span class="unread-dot"></span>
+
+            </article>
+
+
+            <!-- =============================================
+                 NOTIFICATION 3
+            ============================================== -->
+
+            <article
+                class="notification-item unread"
+                data-notification-id="3"
+            >
+
+                <div class="notification-icon info-icon">
+                    i
+                </div>
+
+
+                <div class="notification-content">
+
+                    <div class="notification-top">
+
+                        <h3>
+                            Welcome to  Edypat Express Quest
+                        </h3>
+
+                        <span class="notification-time">
+                            2 days ago
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Your  Edypat Express Quest customer account has been
+                        successfully created. You can now manage
+                        your savings and payments from your dashboard.
+                    </p>
+
+                </div>
+
+
+                <span class="unread-dot"></span>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- =================================================
+             EMPTY NOTIFICATION STATE
+        ================================================== -->
+
+        <section
+            class="notification-empty"
+            id="notificationEmpty"
+            style="display:none;"
+        >
+
+            <div class="empty-notification-icon">
+                ✓
+            </div>
+
+            <h2>
+                You're all caught up
+            </h2>
+
+            <p>
+                There are no new notifications at the moment.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             NOTIFICATION INFORMATION
+        ================================================== -->
+
+        <section class="notification-info-card">
+
+            <div class="notification-info-icon">
+                i
+            </div>
+
+            <div>
+
+                <strong>
+                    How notifications work
+                </strong>
+
+                <p>
+                     Edypat Express Quest will use this area to keep you informed
+                    about important account activity, including payment
+                    receipt submissions, payment verification, savings
+                    updates and withdrawal requests.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<script src="js/profile-notifications.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View your Edypat Express Quest savings calendar, payment history and savings progress."
+    >
+
+    <title>My Savings | Edypat Express Quest</title>
+
+    <link rel="stylesheet" href="css/savingsstyle.css">
+
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        Edypat<span> Express Quest</span>
+    </a>
+
+
+    <nav class="main-nav">
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="savings.html" class="active">
+            Savings
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a href="profile.html" class="profile-button" aria-label="Profile">
+        <span>◯</span>
+    </a>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="savings-page">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="savings-hero">
+
+        <div class="hero-content">
+
+            <div class="hero-eyebrow">
+                <span>▣</span>
+                MY SAVINGS
+            </div>
+
+
+            <h1>
+                View Your
+                <span>Savings Calendar</span>
+            </h1>
+
+
+            <p>
+                See the days you've settled, your total savings
+                and your payment progress month by month.
+            </p>
+
+        </div>
+
+
+        <div class="hero-illustration">
+
+            <div class="calendar-illustration">
+
+                <div class="calendar-top">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="calendar-body">
+
+                    <div class="mini-check">✓</div>
+                    <div></div>
+                    <div class="mini-check">✓</div>
+
+                    <div class="mini-check">✓</div>
+                    <div class="mini-check">✓</div>
+                    <div></div>
+
+                    <div class="mini-check">✓</div>
+                    <div class="mini-check">✓</div>
+                    <div class="mini-check">✓</div>
+
+                </div>
+
+                <div class="naira-symbol">
+                    ₦
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTENT LAYOUT
+    ====================================================== -->
+
+    <section class="savings-layout">
+
+
+        <!-- =================================================
+             MAIN SAVINGS AREA
+        ================================================== -->
+
+        <div class="savings-main">
+
+
+            <!-- =============================================
+                 MONTH SELECTOR
+            ============================================== -->
+
+            <section class="savings-card month-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Select Month
+                        </h2>
+
+                        <p>
+                            Choose a month to view your savings progress.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="month-selector" id="monthSelector">
+
+                    <!-- JavaScript creates months here -->
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 CALENDAR
+            ============================================== -->
+
+            <section class="savings-card calendar-card">
+
+
+                <div class="calendar-heading">
+
+
+                    <button
+                        type="button"
+                        class="calendar-nav"
+                        id="previousMonth"
+                        aria-label="Previous month"
+                    >
+                        ‹
+                    </button>
+
+
+                    <div class="calendar-title">
+
+                        <span class="calendar-title-icon">
+                            ▣
+                        </span>
+
+                        <div>
+
+                            <h2 id="calendarMonth">
+                                September 2026
+                            </h2>
+
+                            <p id="calendarStatus">
+                                Savings progress
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="calendar-nav"
+                        id="nextMonth"
+                        aria-label="Next month"
+                    >
+                        ›
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =========================================
+                     CALENDAR LEGEND
+                ========================================== -->
+
+                <div class="calendar-legend">
+
+                    <div class="legend-item">
+
+                        <span class="legend-dot settled"></span>
+
+                        <span>
+                            Settled
+                        </span>
+
+                    </div>
+
+
+                    <div class="legend-item">
+
+                        <span class="legend-dot unsettled"></span>
+
+                        <span>
+                            Not settled
+                        </span>
+
+                    </div>
+
+
+                    <div class="legend-item">
+
+                        <span class="legend-dot future"></span>
+
+                        <span>
+                            Upcoming
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     CALENDAR
+                ========================================== -->
+
+                <div class="calendar-wrapper">
+
+                    <div class="calendar-weekdays">
+
+                        <span>Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+
+                    </div>
+
+
+                    <div
+                        class="calendar-grid"
+                        id="calendarGrid"
+                    >
+
+                        <!-- JavaScript generates days -->
+
+                    </div>
+
+                </div>
+
+
+                <div class="calendar-note">
+
+                    <span class="note-icon">
+                        i
+                    </span>
+
+                    <p>
+                        Your calendar records the saving days that
+                        have been verified and settled. Previous
+                        months remain available for viewing and
+                        payment.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 SAVINGS TOTALS
+            ============================================== -->
+
+            <section class="savings-summary-card">
+
+
+                <div class="summary-box">
+
+                    <div class="summary-icon">
+                        ₦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Savings Amount
+                        </span>
+
+                        <strong id="totalSavingsAmount">
+                            ₦0.00
+                        </strong>
+
+                        <small id="savingsFormula">
+                            0 days × ₦0.00
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-box">
+
+                    <div class="summary-icon">
+                        ▣
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Saving Days
+                        </span>
+
+                        <strong id="totalSavingDays">
+                            0 days
+                        </strong>
+
+                        <small>
+                            Verified saving days
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =============================================
+                 IMPORTANT NOTICE
+            ============================================== -->
+
+            <section class="important-notice">
+
+                <div class="notice-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <h3>
+                        Important
+                    </h3>
+
+                    <p>
+                        You can settle savings for previous months
+                        even after the month has passed. Select the
+                        month you want to view and make your payment
+                        through the payment page.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 PAYMENT RECORD
+            ============================================== -->
+
+            <section class="savings-card payment-history-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Payment Details
+                        </h2>
+
+                        <p>
+                            Summary of your verified savings activity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="payment-history">
+
+                    <div class="history-row">
+
+                        <span>
+                            Selected Month
+                        </span>
+
+                        <strong id="historyMonth">
+                            September 2026
+                        </strong>
+
+                    </div>
+
+
+                    <div class="history-row">
+
+                        <span>
+                            Daily Saving
+                        </span>
+
+                        <strong id="historyDailyAmount">
+                            ₦1,000.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="history-row">
+
+                        <span>
+                            Settled Days
+                        </span>
+
+                        <strong id="historyDays">
+                            0 days
+                        </strong>
+
+                    </div>
+
+
+                    <div class="history-row">
+
+                        <span>
+                            Savings Amount
+                        </span>
+
+                        <strong id="historySavings">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="history-total">
+
+                        <span>
+                            Verified Savings
+                        </span>
+
+                        <strong id="historyTotal">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="savings-sidebar">
+
+
+            <!-- =============================================
+                 DAILY SAVINGS
+            ============================================== -->
+
+            <section class="side-card daily-card">
+
+                <div class="side-card-heading">
+
+                    <div class="side-icon">
+                        ₦
+                    </div>
+
+                    <span>
+                        Your Daily Savings Amount
+                    </span>
+
+                </div>
+
+
+                <strong
+                    class="daily-amount"
+                    id="sidebarDailyAmount"
+                >
+                    ₦1,000.00
+                </strong>
+
+
+                <p>
+                    Every verified saving day contributes
+                    to your total savings.
+                </p>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 BREAKDOWN
+            ============================================== -->
+
+            <section class="side-card breakdown-card">
+
+                <div class="side-title">
+
+                    <div class="side-icon small">
+                        ≡
+                    </div>
+
+                    <h3>
+                        Savings Breakdown
+                    </h3>
+
+                </div>
+
+
+                <div class="breakdown-row">
+
+                    <span>
+                        Selected Month
+                    </span>
+
+                    <strong id="breakdownMonth">
+                        September
+                    </strong>
+
+                </div>
+
+
+                <div class="breakdown-row">
+
+                    <span>
+                        Saving Days
+                    </span>
+
+                    <strong id="breakdownDays">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="breakdown-row">
+
+                    <span>
+                        Daily Amount
+                    </span>
+
+                    <strong id="breakdownDaily">
+                        ₦1,000.00
+                    </strong>
+
+                </div>
+
+
+                <div class="breakdown-total">
+
+                    <span>
+                        Month's Savings
+                    </span>
+
+                    <strong id="breakdownTotal">
+                        ₦0.00
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 TERMS AND CONDITIONS
+            ============================================== -->
+
+            <section class="side-card terms-card">
+
+                <div class="side-title">
+
+                    <div class="side-icon small">
+                        ▤
+                    </div>
+
+                    <h3>
+                        Terms & Conditions
+                    </h3>
+
+                </div>
+
+
+                <div class="terms-list">
+
+
+                    <div class="term-item">
+
+                        <span class="term-number">
+                            1
+                        </span>
+
+                        <p>
+                            This online savings account is the
+                            property and service of Edypat Express Quest.
+                            Customers are responsible for keeping
+                            their account credentials secure.
+                        </p>
+
+                    </div>
+
+
+                    <div class="term-item">
+
+                        <span class="term-number">
+                            2
+                        </span>
+
+                        <p>
+                            Do not attempt to alter, manipulate or
+                            falsify any payment record displayed
+                            on the website.
+                        </p>
+
+                    </div>
+
+
+                    <div class="term-item">
+
+                        <span class="term-number">
+                            3
+                        </span>
+
+                        <p>
+                            Withdrawals may be requested by the
+                            account holder subject to the applicable
+                            withdrawal procedure and notice period.
+                        </p>
+
+                    </div>
+
+
+                    <div class="term-item">
+
+                        <span class="term-number">
+                            4
+                        </span>
+
+                        <p>
+                            Customers should regularly review their
+                            online savings records and promptly report
+                            any irregularity or incorrect entry to
+                            Edypat Express Quest.
+                        </p>
+
+                    </div>
+
+
+                    <div class="term-item">
+
+                        <span class="term-number">
+                            5
+                        </span>
+
+                        <p>
+                            Payments must be made through the official
+                            payment channels provided by Edypat Express Quest.
+                            Do not make payments to unauthorized
+                            individuals.
+                        </p>
+
+                    </div>
+
+
+                    <div class="term-item">
+
+                        <span class="term-number">
+                            6
+                        </span>
+
+                        <p>
+                            Where applicable, one saving day may be
+                            deducted from the total deposit as the
+                            company's commission before withdrawal
+                            or final payment is processed.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="accountant-box">
+
+                    <span>
+                        ACCOUNTANT
+                    </span>
+
+                    <strong>
+                        OJUGBELI ONYEMAECHI EDWIN
+                    </strong>
+
+                    <small>
+                        C.E.O.
+                    </small>
+
+                </div>
+
+            </section>
+
+
+        </aside>
+
+    </section>
+
+</main>
+
+
+
+
+
+
+<script src="js/savings.js"></script>
+
+</body>
+
+</html>
